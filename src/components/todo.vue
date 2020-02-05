@@ -11,7 +11,6 @@
         @checkTodo="checkTodo"
         @filterTodos="filterTodos"
       )
-    pre {{filter}}  
 </template>
 
 <script>
