@@ -1,9 +1,30 @@
 <template lang="pug">
   div
-    button(type="button") all
-    button(type="button").active active
-    button(type="button") completed
+    button(
+      type="button"
+      v-for="filter in filters"
+      :class="{active: currentFilter === filter}"
+      @click="filterTodos(filter)" 
+    ) {{filter}}  
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      filters: ["all", "active", "completed"],
+      currentFilter: 'all'
+    }
+  },
+  methods: {
+    filterTodos(filter) {
+      this.currentFilter = filter
+      this.$emit('filterTodos', filter);
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
   button {

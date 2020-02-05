@@ -6,12 +6,15 @@
               todo-list-item(
                 :todo="todo"
                 @removeTodo="removeTodo"
+                @checkTodo="checkTodo"
               )
     .footer
       .footer-content
         .counter {{todos.length}} items left
         .filter
-          todo-list-filter    
+          todo-list-filter(
+            @filterTodos="filterTodos"
+          )   
 </template>
 
 <script>
@@ -29,6 +32,12 @@
     methods: {
       removeTodo(todoId) {
         this.$emit('removeTodo', todoId);
+      },
+      checkTodo(todo) {
+        this.$emit('checkTodo', todo);
+      },
+      filterTodos(filter) {
+        this.$emit('filterTodos', filter);
       }
     }
   }
@@ -58,6 +67,7 @@
   .footer-content {
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   .filter {

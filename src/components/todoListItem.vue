@@ -1,9 +1,11 @@
 <template lang="pug">
-  .todo-item
+  .todo-item(:class="{checked: todo.checked}")
     label.label
       .input-block
         input(
           type="checkbox"
+          @change="checkTodo"
+          :checked="todo.checked"
         ).input
       .title {{todo.name}}
     .button
@@ -21,6 +23,13 @@ export default {
   methods: {
     removeTodo() {
       this.$emit('removeTodo', this.todo.id);
+    },
+    checkTodo(e) {
+      const todoItem = {
+        ...this.todo,
+        checked: e.target.checked
+    }
+      this.$emit('checkTodo', todoItem);
     }
   }
 }
@@ -50,6 +59,10 @@ export default {
         visibility: visible;
       }
     }
+  }
+
+  .checked .title{
+    text-decoration: line-through;
   }
 
   .label {
