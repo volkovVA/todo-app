@@ -9,6 +9,7 @@
     .button
       button(
         type="button"
+        @click="removeTodo"
       ).remove x  
 </template>
 
@@ -16,6 +17,11 @@
 export default {
   props: {
     todo: Object
+  },
+  methods: {
+    removeTodo() {
+      this.$emit('removeTodo', this.todo.id);
+    }
   }
 }
 
