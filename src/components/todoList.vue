@@ -31,10 +31,21 @@
     .footer
       .footer-content
         .counter 10 items left
-        .filter    
-
-
+        .filter
+          todo-list-filter    
 </template>
+
+<script>
+
+  import todoListFilter from './todoListFilter';
+
+  export default {
+    components: {
+      todoListFilter
+    }
+  }
+
+</script>
 
 <style lang="scss" scoped>
   .list {
@@ -111,4 +122,12 @@
     }
   }
 
+  .footer-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter {
+    flex: 1;
+  }
 </style>
