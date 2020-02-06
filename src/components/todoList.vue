@@ -5,16 +5,12 @@
             li.item(v-for="todo in todos")
               todo-list-item(
                 :todo="todo"
-                @removeTodo="removeTodo"
-                @checkTodo="checkTodo"
               )
     .footer
       .footer-content
         .counter {{todos.length}} items left
         .filter
-          todo-list-filter(
-            @filterTodos="filterTodos"
-          )   
+          todo-list-filter 
 </template>
 
 <script>
@@ -30,9 +26,6 @@
       todoListFilter, todoListItem
     },
     methods: {
-      removeTodo(todoId) {
-        this.$emit('removeTodo', todoId);
-      },
       checkTodo(todo) {
         this.$emit('checkTodo', todo);
       },
