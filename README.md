@@ -1,7 +1,7 @@
 # todo app
 ## Todo List on React
 
-![todo-react](screenshots/demo.png "todo-react")
+![todo-react](todo-app-react/screenshots/demo.png "todo-react")
 
 ### Project setup
 ```
