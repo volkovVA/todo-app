@@ -1,8 +1,7 @@
 # todo-app
 ## Todo List on Vue.js
 
-## See [DEMO](https://volkovva.github.io/todo-app-vue/)
-![todo-app](screenshots/demo.png "todo-app")
+![todo-app](todo-app-vue/screenshots/demo.png "todo-app")
 
 ## Project setup
 ```
