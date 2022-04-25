@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './views/App';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './views/styles/reset.scss';
+import './views/styles/common.scss';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
